@@ -50,7 +50,7 @@
         (_: {
           imports = [
             (_: {
-              programs.emacs.overrides = self.packages.x86_64-linux;
+              programs.emacs.overrides = _: _: self.packages.x86_64-linux;
             })
             ./agent-shell/module.nix
           ];
