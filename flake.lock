@@ -1,0 +1,78 @@
+{
+  "nodes": {
+    "acp-el-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760291468,
+        "narHash": "sha256-4UWeutmNhckF1j9yfjrDK+PcjOyFm9+/fgjDAI4AFUk=",
+        "owner": "xenodium",
+        "repo": "acp.el",
+        "rev": "041b32f515fd21b0f241c4f2568de15c52378de2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xenodium",
+        "repo": "acp.el",
+        "type": "github"
+      }
+    },
+    "agent-shell-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760277793,
+        "narHash": "sha256-sJ/mwghJDfVpz9e152VYoMVJ6XwyAAsIjz81SoUEh/U=",
+        "owner": "xenodium",
+        "repo": "agent-shell",
+        "rev": "800778dbaff061ac1a02b131e61a9781c599be89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xenodium",
+        "repo": "agent-shell",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1760164275,
+        "narHash": "sha256-gKl2Gtro/LNf8P+4L3S2RsZ0G390ccd5MyXYrTdMCFE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "362791944032cb532aabbeed7887a441496d5e6e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "acp-el-source": "acp-el-source",
+        "agent-shell-source": "agent-shell-source",
+        "nixpkgs": "nixpkgs",
+        "shell-maker-source": "shell-maker-source"
+      }
+    },
+    "shell-maker-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759928919,
+        "narHash": "sha256-XBOERpeIgxh48bBtK42kxKoTMAQkVXb6zM/s3tQQrBI=",
+        "owner": "xenodium",
+        "repo": "shell-maker",
+        "rev": "ceb6915a0fc2ba3cfc6f1a5fc3bf1a0860bdd36e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xenodium",
+        "repo": "shell-maker",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
