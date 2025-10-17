@@ -21,9 +21,11 @@ in
     programs.emacs = mkIf cfg.enable {
       extraPackages = epkgs: [ epkgs.agent-shell ];
       extraConfig = mkIf cfg.providers.gemini.enable ''
-        ;; TODO: other ways to authenticate
-        (setq agent-shell-google-authentication
-         (agent-shell-google-make-authentication :login t))
+        (use-package agent-shell
+          :config
+          ;; TODO: other ways to authenticate
+          (setq agent-shell-google-authentication
+            (agent-shell-google-make-authentication :login t)))
       '';
     };
     home.packages = mkIf cfg.providers.gemini.enable [ pkgs.gemini-cli ];
