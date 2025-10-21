@@ -16,17 +16,18 @@
       url = "github:xenodium/agent-shell";
       flake = false;
     };
+    codex-acp-source = {
+      url = "github:zed-industries/codex-acp";
+      flake = false;
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      shell-maker-source,
-      acp-el-source,
-      agent-shell-source,
       ...
-    }:
+    }@inputs:
     let
       supportedSystems = [ "x86_64-linux" ];
       forEachSystem =
@@ -38,10 +39,11 @@
             pkgs = import nixpkgs { inherit system; };
           }
         );
-      sources = {
+      sources = with inputs; {
         shell-maker = shell-maker-source;
         acp-el = acp-el-source;
         agent-shell = agent-shell-source;
+        codex-acp = codex-acp-source;
       };
     in
     {

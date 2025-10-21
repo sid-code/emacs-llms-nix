@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "codex-acp-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760709349,
+        "narHash": "sha256-t/QqRCEMuM1MGbi5P5lPuZw3SjyayLffG04mN//Mupk=",
+        "owner": "zed-industries",
+        "repo": "codex-acp",
+        "rev": "9c8bb8d8b8bfa0ad0598a3bb61a9514a68e78471",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zed-industries",
+        "repo": "codex-acp",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1760349414,
@@ -52,6 +68,7 @@
       "inputs": {
         "acp-el-source": "acp-el-source",
         "agent-shell-source": "agent-shell-source",
+        "codex-acp-source": "codex-acp-source",
         "nixpkgs": "nixpkgs",
         "shell-maker-source": "shell-maker-source"
       }
