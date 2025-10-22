@@ -61,15 +61,20 @@
         (_: {
           imports = [
             (
-              { system, lib, ... }:
+              { lib, ... }:
               {
-                programs.emacs = {
-                  overrides = _: _: self.packages.x86_64-linux;
-                  agent-shell.providers = {
-                    anthropic.acpPackage = lib.mkDefault self.packages.${system}.claude-code-acp;
-                    openai.acpPackage = lib.mkDefault self.packages.${system}.codex-acp;
+                # TODO: decouple from x86_64-linux somehow?
+                programs.emacs =
+                  let
+                    packages = self.packages.x86_64-linux;
+                  in
+                  {
+                    overrides = _: _: { inherit (packages) shell-maker acp-el; };
+                    agent-shell.providers = {
+                      anthropic.acpPackage = lib.mkDefault self.packages.x86_64-linux.claude-code-acp;
+                      openai.acpPackage = lib.mkDefault self.packages.x86_64-linux.codex-acp;
+                    };
                   };
-                };
               }
             )
             ./agent-shell/module.nix
