@@ -35,6 +35,7 @@ in
                   Path to the API key for provider ${providerName}.
                   If not provided, will attempt to use a login flow.
                 '';
+                default = null;
                 type = types.nullOr types.path;
               };
             };
