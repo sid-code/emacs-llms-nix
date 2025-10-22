@@ -60,10 +60,18 @@
       homeModules = [
         (_: {
           imports = [
-            (_: {
-              programs.emacs.overrides = _: _: self.packages.x86_64-linux;
-              nixpkgs.overlays = [ (_: super: mkPackages super) ];
-            })
+            (
+              { system, lib, ... }:
+              {
+                programs.emacs = {
+                  overrides = _: _: self.packages.x86_64-linux;
+                  agent-shell.providers = {
+                    anthropic.acpPackage = lib.mkDefault self.packages.${system}.claude-code-acp;
+                    openai.acpPackage = lib.mkDefault self.packages.${system}.codex-acp;
+                  };
+                };
+              }
+            )
             ./agent-shell/module.nix
           ];
         })

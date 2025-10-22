@@ -25,6 +25,11 @@ in
           types.submodule {
             options = {
               enable = mkEnableOption "${providerName} provider";
+              acpPackage = mkOption {
+                description = "The ACP package to use for this provider";
+                default = null;
+                type = types.nullOr types.package;
+              };
               apiKeyFile = mkOption {
                 description = ''
                   Path to the API key for provider ${providerName}.
@@ -41,6 +46,9 @@ in
         };
         anthropic = mkOption {
           type = provider "anthropic";
+        };
+        openai = mkOption {
+          type = provider "openai";
         };
       };
   };
@@ -76,7 +84,13 @@ in
 
     };
     home.packages =
-      (if cfg.providers.google.enable then [ pkgs.gemini-cli ] else [ ])
-      ++ (if cfg.providers.openai.enable then [ pkgs.codex-acp ] else [ ]);
+      let
+        packagesForProvider =
+          provider:
+          if cfg.providers.${provider}.enable then [ cfg.providers.${provider}.acpPackage ] else [ ];
+      in
+      builtins.filter (x: x != null) (
+        packagesForProvider "google" ++ packagesForProvider "anthropic" ++ packagesForProvider "openai"
+      );
   };
 }
