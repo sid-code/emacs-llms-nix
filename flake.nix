@@ -69,7 +69,7 @@
                     packages = self.packages.x86_64-linux;
                   in
                   {
-                    overrides = _: _: { inherit (packages) shell-maker acp-el; };
+                    overrides = _: _: { inherit (packages) agent-shell shell-maker acp-el; };
                     agent-shell.providers = {
                       anthropic.acpPackage = lib.mkDefault self.packages.x86_64-linux.claude-code-acp;
                       openai.acpPackage = lib.mkDefault self.packages.x86_64-linux.codex-acp;
