@@ -67,7 +67,7 @@ in
           providerVariableSet =
             provider:
             if cfg.providers.${provider}.enable then
-              "(setq ${providerAuthVariable} (${providerMakeAuthFn} ${
+              "(setq ${providerAuthVariable provider} (${providerMakeAuthFn provider} ${
                 authClause cfg.providers.${provider}.apiKeyFile
               }))"
             else
