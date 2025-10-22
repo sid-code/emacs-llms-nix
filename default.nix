@@ -6,6 +6,6 @@ rec {
     source = sources.agent-shell;
     inherit acp-el shell-maker;
   };
-
   codex-acp = callPackage ./codex-acp.nix { source = sources.codex-acp; };
+  claude-code-acp = callPackage ./claude-code-acp.nix { source = sources.claude-code-acp; };
 }

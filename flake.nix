@@ -20,6 +20,10 @@
       url = "github:zed-industries/codex-acp";
       flake = false;
     };
+    claude-code-acp-source = {
+      url = "github:zed-industries/claude-code-acp";
+      flake = false;
+    };
   };
 
   outputs =
@@ -29,7 +33,18 @@
       ...
     }@inputs:
     let
+      sources = with inputs; {
+        shell-maker = shell-maker-source;
+        acp-el = acp-el-source;
+        agent-shell = agent-shell-source;
+        codex-acp = codex-acp-source;
+        claude-code-acp = claude-code-acp-source;
+      };
+
+      mkPackages = { callPackage, ... }: callPackage ./. { inherit sources; };
+
       supportedSystems = [ "x86_64-linux" ];
+
       forEachSystem =
         f:
         nixpkgs.lib.genAttrs supportedSystems (
@@ -39,20 +54,15 @@
             pkgs = import nixpkgs { inherit system; };
           }
         );
-      sources = with inputs; {
-        shell-maker = shell-maker-source;
-        acp-el = acp-el-source;
-        agent-shell = agent-shell-source;
-        codex-acp = codex-acp-source;
-      };
     in
     {
-      packages = forEachSystem ({ pkgs, ... }: pkgs.callPackage ./. { inherit sources; });
+      packages = forEachSystem ({ pkgs, ... }: mkPackages pkgs);
       homeModules = [
         (_: {
           imports = [
             (_: {
               programs.emacs.overrides = _: _: self.packages.x86_64-linux;
+              nixpkgs.overlays = [ (_: super: mkPackages super) ];
             })
             ./agent-shell/module.nix
           ];
