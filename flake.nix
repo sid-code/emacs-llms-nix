@@ -64,18 +64,18 @@
         (_: {
           imports = [
             (
-              { lib, ... }:
+              { pkgs, lib, ... }:
               {
                 # TODO: decouple from x86_64-linux somehow?
                 programs.emacs =
                   let
-                    packages = self.packages.x86_64-linux;
+                    packages = self.packages.${pkgs.system};
                   in
                   {
                     overrides = _: _: { inherit (packages) agent-shell shell-maker acp-el; };
                     agent-shell.providers = {
-                      anthropic.acpPackage = lib.mkDefault self.packages.x86_64-linux.claude-code-acp;
-                      openai.acpPackage = lib.mkDefault self.packages.x86_64-linux.codex-acp;
+                      anthropic.acpPackage = lib.mkDefault packages.claude-code-acp;
+                      openai.acpPackage = lib.mkDefault packages.codex-acp;
                     };
                   };
               }
