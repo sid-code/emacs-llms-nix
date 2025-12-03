@@ -3,11 +3,11 @@
     "acp-el-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1763294109,
-        "narHash": "sha256-dCiX0S8tsRHJqi1n5mzSmvcCg+u7ZhY5dVgGDWvYUTQ=",
+        "lastModified": 1764262166,
+        "narHash": "sha256-jIuvn0c67sGNduKRGwSItEwcLbRKPxBFCALOYnI8600=",
         "owner": "xenodium",
         "repo": "acp.el",
-        "rev": "3c6a39c09684145b82721b506b80fa857664258a",
+        "rev": "8f82c9a65bb44ba2aad452bfa2a62c443bc12fb1",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "agent-shell-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1763349290,
-        "narHash": "sha256-18cE4TUDoX7oKgh3DuRBAbsVzEeorvElxZi0+JU5RhY=",
+        "lastModified": 1764768501,
+        "narHash": "sha256-UmYzfyPfD4Fbr+b4BqEnn0LvWbxMvEfdn74jYFpQuyI=",
         "owner": "xenodium",
         "repo": "agent-shell",
-        "rev": "086d316836687f3c3e59201e8a2e213fe6951550",
+        "rev": "de19d78141cf27808e54f2894b197b9d46b991d9",
         "type": "github"
       },
       "original": {
@@ -35,11 +35,11 @@
     "claude-code-acp-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1763986631,
-        "narHash": "sha256-QMKQKemCDqhTqLwC3sxc357JlC/NVF79YWvgB3ToBIc=",
+        "lastModified": 1764761221,
+        "narHash": "sha256-lOzXJJvNUq5gJEpmYIUgS0llXPCCwPjtcxHrn9PbTpc=",
         "owner": "zed-industries",
         "repo": "claude-code-acp",
-        "rev": "ac2119a23a5250047d08dc6eb2271c2b3dd6a5d0",
+        "rev": "e57893f6d0bd967d63a3e46c253d4f0ed1f1fcb4",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
     "codex-acp-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1763984467,
-        "narHash": "sha256-fUY76RRvZ4Cri7diV1gL00KISlFeFuxqVQHbfXl2kQU=",
+        "lastModified": 1764771233,
+        "narHash": "sha256-+zCXXo8Fw3fSYghxKqsPMau0Xkb8Fy6P873HcrveSHo=",
         "owner": "zed-industries",
         "repo": "codex-acp",
-        "rev": "a36adc99a6c5cfa64392bdd3e4a90b150a3bac25",
+        "rev": "5d2f85b2063b1340a0fe7cc21075818509130598",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1763934636,
-        "narHash": "sha256-9glbI7f1uU+yzQCq5LwLgdZqx6svOhZWkd4JRY265fc=",
+        "lastModified": 1764642553,
+        "narHash": "sha256-mvbFFzVBhVK1FjyPHZGMAKpNiqkr7k++xIwy+p/NQvA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ee09932cedcef15aaf476f9343d1dea2cb77e261",
+        "rev": "f720de59066162ee879adcc8c79e15c51fe6bfb4",
         "type": "github"
       },
       "original": {
