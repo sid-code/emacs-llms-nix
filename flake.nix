@@ -67,7 +67,6 @@
             (
               { pkgs, lib, ... }:
               {
-                # TODO: decouple from x86_64-linux somehow?
                 programs.emacs =
                   let
                     packages = self.packages.${pkgs.system};
