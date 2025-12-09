@@ -16,14 +16,6 @@
       url = "github:xenodium/agent-shell";
       flake = false;
     };
-    codex-acp-source = {
-      url = "github:zed-industries/codex-acp";
-      flake = false;
-    };
-    claude-code-acp-source = {
-      url = "github:zed-industries/claude-code-acp";
-      flake = false;
-    };
   };
 
   outputs =
@@ -37,8 +29,6 @@
         shell-maker = shell-maker-source;
         acp-el = acp-el-source;
         agent-shell = agent-shell-source;
-        codex-acp = codex-acp-source;
-        claude-code-acp = claude-code-acp-source;
       };
 
       mkPackages = { callPackage, ... }: callPackage ./. { inherit sources; };
@@ -74,8 +64,8 @@
                   {
                     overrides = _: _: { inherit (packages) agent-shell shell-maker acp-el; };
                     agent-shell.providers = {
-                      anthropic.acpPackage = lib.mkDefault packages.claude-code-acp;
-                      openai.acpPackage = lib.mkDefault packages.codex-acp;
+                      anthropic.acpPackage = lib.mkDefault pkgs.claude-code-acp;
+                      openai.acpPackage = lib.mkDefault pkgs.codex-acp;
                     };
                   };
               }
