@@ -19,11 +19,11 @@
     "agent-shell-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1781082305,
-        "narHash": "sha256-u1N6bXXzm8vkTqxpNHo0DJ0qe61BSmfaFyZyij+PAAU=",
+        "lastModified": 1782667659,
+        "narHash": "sha256-OAve4vj8TbFhBnmWVeTt6bKhPTal88ZUcW7yf0ZBuUI=",
         "owner": "xenodium",
         "repo": "agent-shell",
-        "rev": "0b32cadc56b5bb16fb623eb41c0ae9e74fdf287d",
+        "rev": "4f7055084c296f67643f633167dbb2abaa0ce10a",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1780930886,
-        "narHash": "sha256-rppURzHviaQN131F+nLiLdGfcb0uCd9gGP0E5+iw9MI=",
+        "lastModified": 1782545840,
+        "narHash": "sha256-PkBPmP5ofNtunCU7/tfn6wi9OLlzFGcHAqqmY+/mwUI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8c3cede7ddc26bd659d2d383b5610efbd2c7a16e",
+        "rev": "3d46470bb3030020f7e1361f33514854f5bfa86d",
         "type": "github"
       },
       "original": {
@@ -59,11 +59,11 @@
     "shell-maker-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1781029418,
-        "narHash": "sha256-nJNZBZKmzEVn5gNEL0DT4S09Hfd8hk6DLaZTtoRksS0=",
+        "lastModified": 1782667593,
+        "narHash": "sha256-Y6ZIKG9yJ03R063a9g5FRNAZowSSv1W7RXk7sTxuGHI=",
         "owner": "xenodium",
         "repo": "shell-maker",
-        "rev": "43ee9e1862994cbaa89715d324edb7a424181f22",
+        "rev": "83f3712d3d7c54f81ee73cc88abaff46410489db",
         "type": "github"
       },
       "original": {
