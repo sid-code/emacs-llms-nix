@@ -59,12 +59,12 @@
               {
                 programs.emacs =
                   let
-                    packages = self.packages.${pkgs.system};
+                    packages = self.packages.${pkgs.stdenv.hostPlatform.system};
                   in
                   {
                     overrides = _: _: { inherit (packages) agent-shell shell-maker acp-el; };
                     agent-shell.providers = {
-                      anthropic.acpPackage = lib.mkDefault pkgs.claude-code-acp;
+                      anthropic.acpPackage = lib.mkDefault pkgs.claude-agent-acp;
                       openai.acpPackage = lib.mkDefault pkgs.codex-acp;
                     };
                   };
